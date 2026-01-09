@@ -32,8 +32,8 @@ gum format --theme dracula <<EOF
 EOF
 
 opt=$(gum choose --limit=1 --header "  Choose" \
-  "1. Create Account" \
-  "2. Delete Account" \
+  "1. Create SSH Account" \
+  "2. Delete SSH Account" \
   "3. Renew Account" \
   "4. Lock/Unlock Account" \
   "5. Edit Banner" \
@@ -62,6 +62,6 @@ case "$opt" in
   "10. SlowDNS Menu") slowdns-menu ;;
   "11. X-UI Menu") xui-menu ;;
   "12. Uninstall") 
-    gum confirm "Are you sure you want to uninstall BraanVPSManager? This action cannot be undone." && bash /etc/BraanVPSManager/uninstall.sh ;;
+    gum confirm "Are you sure you want to uninstall BraanVPSManager😭? This action cannot be undone." && bash /etc/BraanVPSManager/uninstall.sh ;;
   "xx. Exit") exit ;;
 esac
