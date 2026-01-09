@@ -6,7 +6,8 @@ old_res=$(grep ExecStart "$SERVICE_FILE" | sed -n 's/.*--res "\(.*\)".*/\1/p')
 
 gum format --theme dracula --type markdown "# ✨ Edit 101 Response"
 
-[ -z "$old_res" ] && old_res="Switching Protocols"
+[ -z "$old_res" ] && old_res="<b><i><u><span style="color:green;">BgridVPSManager</span></u></i></b>
+<b><i><u><span style="color:red;">Join our telegram channel. </span></u></i></b><b><i><u><span style="color:yellow;">channel link https://t.me/b_grid</span></u></i></b>"
 
 new_res=$(echo "$old_res" | gum write --placeholder "Write message to show after http/1.1 101 ")
 
