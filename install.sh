@@ -56,9 +56,9 @@ setup_domain() {
         exit 1
     fi
     if echo "$domain" > /etc/BraanVPSManager/domain; then
-        log_success "Domain saved."
+        log_success "Domain saved successfully😁💯."
     else
-        log_error "Failed to save domain."
+        log_error "Failed to save domain 😢."
         exit 1
     fi
 }
@@ -66,7 +66,7 @@ setup_domain() {
 
 # Update system packages
 update_system() {
-    log_info "Please wait updating system. Do not exit..."
+    log_info "Please wait⏳, system updating. Do not exit🙂‍↔️..."
     apt update -y > /dev/null 2>&1 && apt dist-upgrade -y > /dev/null 2>&1
     if [[ $? -ne 0 ]]; then 
         log_error "System update failed."
@@ -85,10 +85,10 @@ install_packages() {
       zip unzip net-tools nano lsof shc gnupg dos2unix dirmngr bc \
       stunnel4 nginx dropbear socat xz-utils sshguard squid > /dev/null 2>&1
     if [[ $? -ne 0 ]]; then 
-        log_error "Failed to install one or more packages."
+        log_error "sorry, failed to install one or more packages 😢."
         exit 1
     fi
-    log_success "Packages installed."
+    log_success "Packages installed😁💯."
 }
 
 # Setup Squid proxy
@@ -110,7 +110,7 @@ install_gum() {
       tar -xz -C /usr/local/bin --strip-components=1 --wildcards '*/gum'
     if [[ -f /usr/local/bin/gum ]]; then
       chmod +x /usr/local/bin/gum
-      log_success "gum installed."
+      log_success "gum installed😁💯."
     else
       log_error "Failed to install gum."
       exit 1
@@ -171,7 +171,7 @@ setup_ssl_cert() {
     /root/.acme.sh/acme.sh --installcert -d "$domain" \
       --fullchainpath /etc/BraanVPSManager/cert.crt \
       --keypath /etc/BraanVPSManager/cert.key --ecc > /dev/null 2>&1 || log_error "acme.sh certificate install failed."
-    log_success "SSL cert installed."
+    log_success "SSL cert installed😁💯."
 }
 
 # Configure Nginx
@@ -214,7 +214,7 @@ setup_badvpn() {
     for port in 7200 7300; do
           systemctl enable --now badvpn-udpgw@${port}.service > /dev/null 2>&1 || log_warning "Failed to start badvpn-udpgw@${port}.service."
     done
-    log_success "BadVPN set up."
+    log_success "BadVPN set up😁💯."
 }
 
 
@@ -229,7 +229,7 @@ configure_stunnel() {
     sed -i 's/ENABLED=0/ENABLED=1/' /etc/default/stunnel4
     systemctl enable stunnel4 > /dev/null 2>&1
     systemctl restart stunnel4 > /dev/null 2>&1 || log_warning "Failed to restart stunnel4."
-    log_success "Stunnel configured."
+    log_success "Stunnel configured😁💯."
 }
 
 # Configure SSHGuard
@@ -237,7 +237,7 @@ configure_sshguard() {
     log_info "Configuring SSHGuard..."
     systemctl enable sshguard > /dev/null 2>&1
     systemctl restart sshguard > /dev/null 2>&1 || log_warning "Failed to restart sshguard."
-    log_success "SSHGuard configured."
+    log_success "SSHGuard configured😁💯."
 }
 
 # Apply firewall rules
@@ -291,7 +291,7 @@ install_scripts() {
     wget -qO /etc/BraanVPSManager/uninstall.sh "$BASE_URL/uninstall.sh" > /dev/null 2>&1 || log_warning "Failed to download uninstall.sh."
     chmod +x /etc/BraanVPSManager/uninstall.sh
     
-    log_success "Scripts installed."
+    log_success "Scripts installed😁💯."
 }
 
 # Setup cron jobs
@@ -315,7 +315,7 @@ final_cleanup() {
       chmod +x /usr/bin/$link
     done
     
-    log_success "Final cleanup done."
+    log_success "Final cleanup done👍."
 }
 
 # Main function that orchestrates the installation
@@ -348,7 +348,7 @@ main() {
     final_cleanup
     
     # Installation complete
-    log_success "BraanVPSManager Installation complete 💯."
+    log_success "BraanVPSManager Installation complete 💯🎊🎉."
     log_success "Run '${yellow}braanvpsmanager${nc}' or '${yellow}bvm${nc}' to start."
 }
 
