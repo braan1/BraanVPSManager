@@ -19,7 +19,7 @@ fi
 clear
 
 echo "-----------------------------"
-echo "  Uninstalling BraanVPSManager  "
+echo "  Uninstalling BraanVPSManager 😭 "
 echo "-----------------------------"
 
 log_info "Stopping and disabling services..."
@@ -123,7 +123,7 @@ netfilter-persistent reload > /dev/null 2>&1
 # Clean up iptables files
 rm -f /etc/iptables.up.rules
 
-log_info "Removing installed packages..."
+log_info "Removing installed packages... 😭"
 
 # Remove packages that were specifically installed by BraanVPSManager
 # Note: Being conservative here - only removing packages that are primarily for BraanVPSManager
