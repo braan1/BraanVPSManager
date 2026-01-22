@@ -32,8 +32,8 @@ gum format --theme dracula <<EOF
 EOF
 
 opt=$(gum choose --limit=1 --header "  Choose" \
-  "1. Create SSH Account" \
-  "2. Delete SSH Account" \
+  "1. Create Account" \
+  "2. Delete Account" \
   "3. Renew Account" \
   "4. Lock/Unlock Account" \
   "5. Edit Banner" \
