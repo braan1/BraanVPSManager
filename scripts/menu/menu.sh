@@ -62,6 +62,6 @@ case "$opt" in
   "10. SlowDNS Menu") slowdns-menu ;;
   "11. X-UI Menu") xui-menu ;;
   "12. Uninstall") 
-    gum confirm "Are you sure you want to uninstall BraanVPSManager😭? This action cannot be undone." && bash /etc/BraanVPSManager/uninstall.sh ;;
+    gum confirm "Are you sure you want to uninstall BraanVPSManager😭? ⚠️This action cannot be undone⚠️." && bash /etc/BraanVPSManager/uninstall.sh ;;
   "xx. Exit") exit ;;
 esac
